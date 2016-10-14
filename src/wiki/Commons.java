@@ -293,7 +293,11 @@ public class Commons {
 	public static final String[][] NEWLINE_CATEGORY_REGEX = { {
 			CASE_INSENSITIVE
 					+ "(\\[\\[category:[^]]+\\]\\]\\n)\\n+(\\[\\[category:)",
-			"$1$2" } };
+			"$1$2" },
+                        {
+                        CASE_INSENSITIVE
+                                        + "\\[\\[Category:Uploaded with UploadWizard\\]\\]\\n?",
+                        "" } };
 	public static final String[][] FORMAT_REGEX = {
 			{ CASE_INSENSITIVE + "</?br( )?(/)?\\\\?>", "<br$1$2>" },
 			{

@@ -3,6 +3,9 @@ package app;
 import java.io.IOException;
 import java.net.HttpRetryException;
 import java.util.logging.Level;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.nio.charset.Charset;
 
 import javax.security.auth.login.LoginException;
 
@@ -62,7 +65,11 @@ public class YaCBot {
 			System.exit(-1);
 		}
 		System.out.println("Please type in the password for " + args[0] + ".");
-		return System.console().readPassword();
+		try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in, Charset.forName("UTF-8")))) {
+			return br.readLine().toCharArray();
+		} catch (IOException e) {
+			throw new RuntimeException("Cannot read password :-(", e);
+		}
 	}
 
 	/**

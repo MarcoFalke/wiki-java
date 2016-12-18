@@ -208,14 +208,6 @@ public class WikiPage {
 			}
 			text[i] = textPart;
 		}
-		if (!getPlainText().matches(
-				"(?ius).*?\\{\\{\\s*int:filedesc\\s*\\}\\}.*?")) {
-			this.setPlainText("== {{int:filedesc}} ==\n" + getPlainText());
-			// TODO minor changes can not be logged in the edit summary as of
-			// now.
-			if (getEditSummary().length() > 0)
-				appendToEditSummary("[[Com:regex#Headings|Add missing summary heading]]. ");
-		}
 		String[] splitPlainText = getPlainText()
 				.split("(?i)\\[\\[category:", 2);
 		this.setPlainText(splitPlainText[0]

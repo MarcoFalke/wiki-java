@@ -1,3 +1,5 @@
+# Unmaintained, Archived
+
 # Wiki-Tools
 
 A collection of tools and bots (mainly for commons.wikimedia.org) based on [wiki-java](https://github.com/MER-C/wiki-java).
